@@ -13,9 +13,19 @@
             <input type="number" id="depo-anu" placeholder="Renta" required><br>
             <input type="radio" name="ini-anu" id="ini-anu" required>Deposito al inicio de mes <br>
             <input type="radio" name="ini-anu" id="fin-anu" required>Deposito al fin de mes <br>
-            
-            <input type="number" id="mes-anu" placeholder="Plazo en meses" required> <br>
-            <input type="number" id="int-anu" placeholder="Interés mensual" required><br>
+
+            <input type="number" id="mes-anu" placeholder="Plazo en meses" required>
+            <select id="anu-tipo-plazo">
+                <option value="mensual">Mensual</option>
+                <option value="anual">Anual</option>
+                <option value="trimestral">Trimestral</option>
+            </select> <br>
+            <input type="number" id="int-anu" placeholder="Interés mensual" required>
+            <select id="anu-tipo-interes">
+                <option value="mensual">Capitalizable Mensual</option>
+                <option value="anual">Capitalizable Anual</option>
+                <option value="trimestral">Capitalizable Trimestral</option>
+            </select><br>
             <input type="submit" value="Generar desglose de la tabla" id="btn-anu">
         </form>
         <div id="tabla-anu"></div>
