@@ -1,3 +1,6 @@
+body{
+    background: rgb(255, 241, 176);
+}
 #anu tr:nth-child(3n+1) {
     background: rgb(252, 91, 91);
 }
@@ -9,7 +12,6 @@
 }
 #titulo{
     width: 100%;
-    /* position: absolute; */
     display: flex;
     flex-direction: column;
 
@@ -20,11 +22,15 @@
     justify-content: center;
 }
 #titulo h1{
+    border-radius: 50px;
     display: flex;
     justify-content: center;
     width: 100%;
     background: rgb(255, 164, 28);
     margin: 0;
+    box-shadow: 2px 5px 20px;
+    z-index: 10;
+    margin-bottom: 20px;
 }
 #h2{
     display: flex;
@@ -33,22 +39,29 @@
     width: 100%;
 }
 #h2 #anu{
+    border-radius: 50px 50px 0px 0px;
     display: flex;
     justify-content: center;
     background: rgb(59, 167, 255);
     margin: 0;
+    z-index: 10;
 }
 #h2 #amo{
+    border-radius: 50px 50px 0px 0px;
     display: flex;
     justify-content: center;
     background:  rgb(252, 91, 91);
     margin: 0;
+    z-index: 10;
 }
 #contenedor{
     display: flex;
     flex-direction: row;
 }
 #anu{
+    padding-top: 10px;
+    border-radius: 0px 0px 50px 50px;
+    box-shadow: 2px 5px 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -57,6 +70,9 @@
     width: 50%;
 }
 #amo{
+    padding-top: 10px;
+    border-radius: 0px 0px 50px 50px;
+    box-shadow: 2px 5px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
