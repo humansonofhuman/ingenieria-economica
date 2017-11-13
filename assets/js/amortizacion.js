@@ -1,7 +1,7 @@
 function CalculaRenta(capital, meses, interes){
     return (capital * interes) / (1-Math.pow((1+interes),-meses));
 }
-function CalcularAmortizacion(capital, al_iniciar, meses, interes){
+function CalcularAmortizacion(capital, meses, interes){
     var renta = CalculaRenta(capital, meses, interes).toFixed(4);
     var interes_ant = 0;
     var amortizacion = 0;
@@ -21,7 +21,9 @@ function CalcularAmortizacion(capital, al_iniciar, meses, interes){
         interes_ant = (saldo_insoluto*interes).toFixed(4);
         amortizacion = (renta - interes_ant).toFixed(4);
         amortizacion_acum += amortizacion;
-        saldo_insoluto-=amortizacion;
+        amortizacion_acum = parseFloat(amortizacion_acum).toFixed(4);
+        saldo_insoluto -= amortizacion;
+        saldo_insoluto = parseFloat(saldo_insoluto).toFixed(4);
         mes = {
             mes: index,
             renta: renta,
@@ -33,43 +35,53 @@ function CalcularAmortizacion(capital, al_iniciar, meses, interes){
         desglose.push(mes);
     }
     console.log(desglose);
+    return desglose;
 }
-CalcularAmortizacion(120000, 1, 6, 0.05);
+ImprimeAmortizacion(CalcularAmortizacion(120000, 6, 0.05));
 
-function ImprimeAnualidad(deposito, desglose){
-    var div = document.getElementById('tabla-anu');
-    div.innerHTML = "<h3>Desglose de tabla | Anualidad</h3>"
+function ImprimeAmortizacion(desglose){
+    var div = document.getElementById('tabla-amo');
+    div.innerHTML = "<h3>Desglose de tabla | Amortización</h3>"
     var tabla = document.createElement('table');
     var encabezado = document.createElement('tr');
     encabezado.appendChild(document.createElement('th'));
     encabezado.appendChild(document.createElement('th'));
-    encabezado.cells[0].appendChild(document.createTextNode('Concepto'));
-    encabezado.cells[1].appendChild(document.createTextNode('Cantidad'));
+    encabezado.appendChild(document.createElement('th'));
+    encabezado.appendChild(document.createElement('th'));
+    encabezado.appendChild(document.createElement('th'));
+    encabezado.appendChild(document.createElement('th'));
+    encabezado.cells[0].appendChild(document.createTextNode('Pago'));
+    encabezado.cells[1].appendChild(document.createTextNode('Renta'));
+    encabezado.cells[2].appendChild(document.createTextNode('Intereses'));
+    encabezado.cells[3].appendChild(document.createTextNode('Amortización'));
+    encabezado.cells[4].appendChild(document.createTextNode('Amortización Acumulada'));
+    encabezado.cells[5].appendChild(document.createTextNode('Saldo Insoluto'));
     tabla.appendChild(encabezado);
-
+    
     console.log(tabla);
     desglose.forEach(mes => {
         var fila = document.createElement('tr');
         fila.appendChild(document.createElement('td'));
         fila.appendChild(document.createElement('td'));
-        fila.cells[0].appendChild(document.createTextNode("Interés del mes "+mes.mes));
-        fila.cells[1].appendChild(document.createTextNode(mes.interes_mes));
+        fila.appendChild(document.createElement('td'));
+        fila.appendChild(document.createElement('td'));
+        fila.appendChild(document.createElement('td'));
+        fila.appendChild(document.createElement('td'));
+        fila.cells[0].appendChild(document.createTextNode(mes.mes));
+        fila.cells[1].appendChild(document.createTextNode(mes.renta));
+        fila.cells[2].appendChild(document.createTextNode(mes.interes_ant));
+        fila.cells[3].appendChild(document.createTextNode(mes.amortizacion));
+        fila.cells[4].appendChild(document.createTextNode(mes.amortizacion_acum));
+        fila.cells[5].appendChild(document.createTextNode(mes.saldo_insoluto));
         tabla.appendChild(fila);
         fila = document.createElement('tr');
-        fila.appendChild(document.createElement('td'));
-        fila.appendChild(document.createElement('td'));
-        fila.cells[0].appendChild(document.createTextNode("Deposito del mes "+mes.mes));
-        fila.cells[1].appendChild(document.createTextNode(deposito));
-        tabla.appendChild(fila);
-        fila = document.createElement('tr');
-        fila.appendChild(document.createElement('td'));
-        fila.appendChild(document.createElement('td'));
-        fila.cells[0].appendChild(document.createTextNode("Monto al mes "+mes.mes));
-        fila.cells[1].appendChild(document.createTextNode(mes.monto_mes));
-        tabla.appendChild(fila);
-        console.log("Interés del mes "+mes.mes +"    "+ mes.interes_mes);
-        console.log("Deposito del mes "+mes.mes +"   "+ deposito);
-        console.log("Monto al mes "+mes.mes +"       "+ mes.monto_mes);
     });
     div.appendChild(tabla);
+}
+var botonAmortizacion = document.getElementById('btn-amo');
+botonAmortizacion.onclick = function(){
+    var deposito = parseFloat(document.getElementById("depo-amo").value);
+    var meses = parseFloat(document.getElementById("mes-amo").value);
+    var interes = parseFloat(document.getElementById("int-amo").value);
+    ImprimeAmortizacion(deposito, CalcularAmortizacion(deposito,meses,interes));
 }

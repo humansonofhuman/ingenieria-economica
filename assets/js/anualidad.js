@@ -69,3 +69,4 @@ botonAnualidad.onclick = function(){
     var interes = parseFloat(document.getElementById("int-anu").value);
     ImprimeAnualidad(deposito, CalcularAnualidad(deposito,al_iniciar,meses,interes));
 }
+ImprimeAnualidad(5000, CalcularAnualidad(5000,true,6,0.01));

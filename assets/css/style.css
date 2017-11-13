@@ -1,5 +1,11 @@
-tr:nth-child(3n+1) {
+#anu tr:nth-child(3n+1) {
     background: rgb(252, 91, 91);
+}
+#amo tr:nth-child(1) {
+    background: rgb(59, 167, 255);
+}
+#amo tr:nth-child(2n) {
+    background: rgb(107, 187, 253);
 }
 
 #anu{
