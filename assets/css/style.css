@@ -1,3 +1,16 @@
 tr:nth-child(3n+1) {
     background: rgb(252, 91, 91);
 }
+
+#anu{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 50%;
+}
+#amo{
+    position: absolute;
+    top:0;
+    right: 0;
+    width: 50%;
+}

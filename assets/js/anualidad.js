@@ -25,7 +25,7 @@ function CalcularAnualidad(deposito, al_iniciar, meses, interes){
     return desglose;
 }
 function ImprimeAnualidad(deposito, desglose){
-    var div = document.getElementById('tabla');
+    var div = document.getElementById('tabla-anu');
     div.innerHTML = "<h3>Desglose de tabla | Anualidad</h3>"
     var tabla = document.createElement('table');
     var encabezado = document.createElement('tr');
