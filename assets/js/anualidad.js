@@ -1,17 +1,18 @@
 function CalcularAnualidad(deposito, al_iniciar, meses, interes){
-    var monto = deposito;
+    var monto = deposito.toFixed(4);
     var desglose = [];
     var i = al_iniciar ? 1 : 2;
     if(!al_iniciar){
         desglose.push({mes: 1, interes_mes: 0, monto_mes: monto});
     }
     for(i; i <= meses; i++){
-        var interes_m = (monto*interes);
+        var interes_m = (monto*interes).toFixed(4);
         if(al_iniciar){
             monto += interes_m;
         }else{
             monto += interes_m + deposito;
         }
+        monto = parseFloat(monto).toFixed(4);
         var mes = {
             mes: i,
             interes_mes: interes_m,
