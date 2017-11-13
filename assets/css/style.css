@@ -7,16 +7,59 @@
 #amo tr:nth-child(2n) {
     background: rgb(107, 187, 253);
 }
+#titulo{
+    width: 100%;
+    /* position: absolute; */
+    display: flex;
+    flex-direction: column;
 
-#anu{
-    position: absolute;
-    top:0;
     left: 0;
+    right: 0;
+
+    z-index: 100;
+    justify-content: center;
+}
+#titulo h1{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background: rgb(255, 164, 28);
+    margin: 0;
+}
+#h2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+#h2 #anu{
+    display: flex;
+    justify-content: center;
+    background: rgb(59, 167, 255);
+    margin: 0;
+}
+#h2 #amo{
+    display: flex;
+    justify-content: center;
+    background:  rgb(252, 91, 91);
+    margin: 0;
+}
+#contenedor{
+    display: flex;
+    flex-direction: row;
+}
+#anu{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background:  rgb(255, 148, 148);
     width: 50%;
 }
 #amo{
-    position: absolute;
-    top:0;
-    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 50%;
+    background: rgb(157, 214, 255);
 }
