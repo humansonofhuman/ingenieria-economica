@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ingeniería Económica</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div>
+        <form action="" method="get">
+            <input type="number" id="depo-anu" placeholder="Renta" required><br>
+            <input type="radio" name="ini-anu" id="ini-anu" required>Deposito al inicio de mes <br>
+            <input type="radio" name="ini-anu" id="fin-anu" required>Deposito al fin de mes <br>
+            
+            <input type="number" id="mes-anu" placeholder="Plazo en meses" required> <br>
+            <input type="number" id="int-anu" placeholder="Interés mensual" required><br>
+            <input type="submit" value="Generar desglose de la tabla" id="btn-anu">
+        </form>
+    </div>
+    <div id="tabla"></div>
+    <script src="assets/js/anualidad.js"></script>
+</body>
+</html>

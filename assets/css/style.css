@@ -1,0 +1,3 @@
+tr:nth-child(3n+1) {
+    background: rgb(252, 91, 91);
+}
