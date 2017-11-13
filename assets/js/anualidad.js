@@ -67,6 +67,18 @@ botonAnualidad.onclick = function(){
     var al_iniciar = document.getElementById("ini-anu").checked;
     var meses = parseFloat(document.getElementById("mes-anu").value);
     var interes = parseFloat(document.getElementById("int-anu").value);
+
+    //var tipo_plazo = document.getElementById('anu-tipo-plazo').selectedIndex;
+    var tipo_interes = document.getElementById('anu-tipo-interes').selectedIndex;
+
+    switch(tipo_interes){
+        case 0:interes = interes / 12;
+        break;
+        case 1:interes = interes / 6;
+        break;
+        case 2:interes = interes / 4;
+        break;
+    }
     ImprimeAnualidad(deposito, CalcularAnualidad(deposito,al_iniciar,meses,interes));
 }
-ImprimeAnualidad(5000, CalcularAnualidad(5000,true,6,0.01));
+//ImprimeAnualidad(5000, CalcularAnualidad(5000,true,6,0.01));

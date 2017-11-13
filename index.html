@@ -19,36 +19,34 @@
     </div>
     <div id="contenedor">
     <div id="anu">
-        <form action="" method="get">
-            <input type="number" id="depo-anu" placeholder="Renta" required><br>
-            <input type="radio" name="ini-anu" id="ini-anu" required>Deposito al inicio de mes <br>
-            <input type="radio" name="ini-anu" id="fin-anu" required>Deposito al fin de mes <br>
+        <form action="" method="">
+            <input type="text" id="depo-anu" placeholder="Deposito" ><br>
+            <input type="radio" name="ini-anu" id="ini-anu" >Deposito al inicio de mes <br>
+            <input type="radio" name="ini-anu" id="fin-anu" >Deposito al fin de mes <br>
 
-            <input type="number" id="mes-anu" placeholder="Plazo en meses" required>
-            <select id="anu-tipo-plazo">
-                <option value="mensual">Mensual</option>
-                <option value="anual">Anual</option>
-                <option value="trimestral">Trimestral</option>
-            </select> <br>
-            <input type="number" id="int-anu" placeholder="Interés mensual" required>
+            <input type="text" id="mes-anu" placeholder="Plazo en meses" >
+            <!-- <select id="anu-tipo-plazo">
+                <option value="mensual">Meses</option>
+                <option value="anual">Años</option>
+                <option value="trimestral">Trimestres</option>
+            </select> --> <br>
+            <input type="text" id="int-anu" placeholder="Interés mensual" >
             <select id="anu-tipo-interes">
                 <option value="mensual">Capitalizable Mensual</option>
-                <option value="anual">Capitalizable Anual</option>
+                <option value="anual">Capitalizable Bimestral</option>
                 <option value="trimestral">Capitalizable Trimestral</option>
+                <option value="ninguno"> - </option>
             </select><br>
-            <input type="submit" value="Generar desglose de la tabla" id="btn-anu">
+            <input type="button" value="Generar desglose de la tabla" id="btn-anu">
         </form>
         <div id="tabla-anu"></div>
     </div>
     <div id="amo">
-        <form action="" method="get">
-            <input type="number" id="depo-amo" placeholder="Capital" required><br>
-            <!-- <input type="radio" name="ini-anu" id="ini-anu" required>Deposito al inicio de mes <br>
-            <input type="radio" name="ini-anu" id="fin-anu" required>Deposito al fin de mes <br> -->
-            
-            <input type="number" id="mes-amo" placeholder="Numero de pagos" required> <br>
-            <input type="text" id="int-amo" placeholder="Interés" required><br>
-            <input type="submit" value="Generar desglose de la tabla" id="btn-amo">
+        <form action="" method="">
+            <input type="number" id="depo-amo" placeholder="Capital" ><br>
+            <input type="number" id="mes-amo" placeholder="Numero de pagos" > <br>
+            <input type="text" id="int-amo" placeholder="Interés" ><br>
+            <input type="button" value="Generar desglose de la tabla" id="btn-amo">
         </form>
         <div id="tabla-amo"></div>
     </div>

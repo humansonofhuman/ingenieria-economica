@@ -37,7 +37,7 @@ function CalcularAmortizacion(capital, meses, interes){
     console.log(desglose);
     return desglose;
 }
-ImprimeAmortizacion(CalcularAmortizacion(120000, 6, 0.05));
+//ImprimeAmortizacion(CalcularAmortizacion(120000, 6, 0.05));
 
 function ImprimeAmortizacion(desglose){
     var div = document.getElementById('tabla-amo');
@@ -83,5 +83,5 @@ botonAmortizacion.onclick = function(){
     var deposito = parseFloat(document.getElementById("depo-amo").value);
     var meses = parseFloat(document.getElementById("mes-amo").value);
     var interes = parseFloat(document.getElementById("int-amo").value);
-    ImprimeAmortizacion(deposito, CalcularAmortizacion(deposito,meses,interes));
+    ImprimeAmortizacion(CalcularAmortizacion(deposito,meses,interes));
 }
