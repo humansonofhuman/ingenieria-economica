@@ -19,7 +19,7 @@ function CalcularAmortizacion(capital, meses, interes){
     desglose.push(mes);
     for (let index = 1; index <= meses; index++) {
         interes_ant = (saldo_insoluto*interes).toFixed(4);
-        amortizacion = parseFloat((renta - interes_ant).toFixed(4));
+        amortizacion = (renta - interes_ant).toFixed(4);
         amortizacion_acum += amortizacion;
         amortizacion_acum = parseFloat(amortizacion_acum).toFixed(4);
         saldo_insoluto -= amortizacion;
@@ -57,7 +57,7 @@ function ImprimeAmortizacion(desglose){
     encabezado.cells[4].appendChild(document.createTextNode('Amortización Acumulada'));
     encabezado.cells[5].appendChild(document.createTextNode('Saldo Insoluto'));
     tabla.appendChild(encabezado);
-
+    
     console.log(tabla);
     desglose.forEach(mes => {
         var fila = document.createElement('tr');
